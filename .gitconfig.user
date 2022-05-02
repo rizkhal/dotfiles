@@ -1,0 +1,13 @@
+[user]
+    name = rizkhal
+    email = lamaaurizkhal@gmail.com
+[alias]
+    all = add .
+    s = status
+    b = branch
+    cm = commit -m
+    co = checkout
+    cp = checkout -b
+    d = branch -d
+    fd = branch -D
+    lg = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
