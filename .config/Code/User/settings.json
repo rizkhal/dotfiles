@@ -1,0 +1,62 @@
+{
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.fontFamily": "Operator Mono",
+    "editor.fontSize": 13,
+    "html.format.wrapLineLength": 99999,
+    "editor.fontWeight": 500,
+    "editor.letterSpacing": 0.5,
+    "editor.lineHeight": 22,
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": false,
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[json]": {
+        "breadcrumbs.showBooleans": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.statusBar.visible": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "blade.format.enable": true,
+    "bladeFormatter.format.wrapAttributes": "force-expand-multiline",
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "settingsSync.ignoredExtensions": [],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "gruvbox-material-icon-theme",
+    "workbench.startupEditor": "none",
+    "json.schemas": [],
+    "workbench.colorTheme": "Palenight Theme",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 2,
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false
+}

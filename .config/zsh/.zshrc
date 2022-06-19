@@ -20,7 +20,8 @@ ZSH_THEME="josh"
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
+#
+#Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
@@ -91,6 +92,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -101,8 +105,18 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias a="php artisan"
-alias tamael="ssh root@49.50.10.19 -p 8288"
+alias pest="./vendor/bin/pest"
+alias cs-fixer="./vendor/bin/php-cs-fixer fix"
+# local server for mobile development
+alias home-serve='php artisan serve --host=192.168.3.52'
 
-# load nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# android sdk
+export JAVA_HOME=$HOME/App/android-studio/jre
+export ANDROID_SDK_ROOT=$HOME/App/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+# specific
+export SPICETIFY_INSTALL="/home/rizkhal/.spicetify"
+export PATH="$PATH:/home/rizkhal/.spicetify"

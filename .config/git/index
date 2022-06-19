@@ -1,0 +1,7 @@
+[user]
+    name = rizkhal
+    email = lamaaurizkhal@gmail.com
+[commit]
+    gpgsign = true
+[include]
+    path = ./alias
