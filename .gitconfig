@@ -1,2 +1,2 @@
 [include]
-    path = ~/.config/git/.gitconfig.user
+    path = ~/.config/git/index
