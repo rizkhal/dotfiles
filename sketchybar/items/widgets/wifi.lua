@@ -8,6 +8,15 @@ sbar.exec("killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/
 
 local popup_width = 250
 
+local vpn_status = sbar.add("item", {
+    position = "right",
+    padding_left = 0,
+    icon = {
+        string = icons.wifi.closed_lock,
+        color = colors.red,
+    },
+})
+
 local wifi_up = sbar.add("item", "widgets.wifi1", {
   position = "right",
   padding_left = -5,
@@ -64,7 +73,8 @@ local wifi = sbar.add("item", "widgets.wifi.padding", {
 local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
   wifi.name,
   wifi_up.name,
-  wifi_down.name
+  wifi_down.name,
+  vpn_status.name
 }, {
   background = { color = colors.bg1 },
   popup = { align = "center", height = 30 }
@@ -171,18 +181,33 @@ wifi_up:subscribe("network_update", function(env)
       color = down_color
     }
   })
+
+  sbar.exec("scutil --nc list", function(result)
+      local vpn_connected = string.find(result, "macos.vpn") and string.find(result, "Connected")
+
+      vpn_status:set({
+          icon = {
+              string = vpn_connected and icons.wifi.closed_lock or icons.wifi.opened_lock,
+              color = vpn_connected and colors.green or colors.red,
+          },
+          label = {
+              color = vpn_connected and colors.green or colors.red
+          }
+      })
+  end)
 end)
 
 wifi:subscribe({"wifi_change", "system_woke"}, function(env)
-  sbar.exec("ipconfig getifaddr en0", function(ip)
-    local connected = not (ip == "")
-    wifi:set({
-      icon = {
-        string = connected and icons.wifi.connected or icons.wifi.disconnected,
-        color = connected and colors.white or colors.red,
-      },
-    })
-  end)
+    sbar.exec("ipconfig getifaddr en0", function(ip)
+        local connected = not (ip == "")
+
+        wifi:set({
+            icon = {
+                string = connected and icons.wifi.connected or icons.wifi.disconnected,
+                color = connected and colors.white or colors.red,
+            },
+        })
+    end)
 end)
 
 local function hide_details()

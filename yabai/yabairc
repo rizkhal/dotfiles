@@ -1,10 +1,10 @@
 # default layout (can be bsp, stack or float)
 yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
-yabai -m config window_shadow on
+# yabai -m config window_shadow on
 yabai -m config menubar_opacity 0.0
-yabai -m config active_window_opacity 0.0
-yabai -m config normal_window_opacity 0.90
+# yabai -m config active_window_opacity 0.0
+# yabai -m config normal_window_opacity 0.90
 
 # padding and gap between window
 yabai -m config top_padding 50
@@ -22,3 +22,4 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^DBeaver$" manage=off
 yabai -m rule --add app="^emulator-55$" manage=on
+yabai -m rule --add app="^FortiClient$" manage=off
