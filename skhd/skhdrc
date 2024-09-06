@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # toggle layout between stack and bsp
 shift + alt - i : yabai -m query --spaces --space | grep '"type":"stack"' && yabai -m space --layout bsp || yabai -m space --layout stack
 

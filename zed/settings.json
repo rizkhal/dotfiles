@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "dock": "left",
+    "version": "2"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
   "auto_update_extensions": {
     "lua": true
   },
@@ -19,7 +26,7 @@
       "program": "zsh"
     }
   },
-  "theme": "Catppuccin Macchiato",
+  "theme": "One Hunter Classic",
   "vim_mode": true,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_weight": 600,

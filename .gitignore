@@ -1,6 +1,16 @@
+# trash
+.zed
+.DS_Store
+
+# nix
 nix
 direnv
-result
+
+# terminal
+btop
 htop
 neofetch
-.DS_Store
+
+# php
+psysh
+phpmon
