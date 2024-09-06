@@ -32,15 +32,23 @@ yabai -m config external_bar all:40:0 \
   right_padding 8 \
   window_gap 10
 
-yabai -m rule --add app="^(DBeaver|Discord|FortiClient|Preview|Calculator|Calendar|Discord|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+# General
 yabai -m rule --add label="Finder" app="^Finder$" manage=off
-yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+yabai -m rule --add app="^(DBeaver|Discord|FortiClient|Preview|Calculator|Calendar|Discord|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+
+# Browser inspect element on separate window
+yabai -m rule --add app="^Safari$" title="^.*Web Inspector.*$" manage=off
+yabai -m rule --add app="^Firefox$" title="^.*Developer Tools.*$" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add app="^Google Chrome$" title="^.*Developer Tools.*$" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+
 
 # Office
+yabai -m rule --add app="LibreOffice" manage=off
 yabai -m rule --add app="^(Microsoft Word|Microsoft Excel|Microsoft Powerpoint)$" label="Office" manage=off
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
-# yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
