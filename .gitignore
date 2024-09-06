@@ -1,6 +1,7 @@
 # trash
 .zed
 .DS_Store
+zed
 
 # nix
 nix
