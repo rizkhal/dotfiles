@@ -1,0 +1,50 @@
+# ──────────────────────────────────────────
+# .zshrc.local — Machine-specific overrides
+# This file is NOT committed to the repo
+# Copy from .zshrc.local.example and customize per machine
+# ──────────────────────────────────────────
+
+# ──────────────────────────────────────────
+# .zshrc.local — Machine-specific overrides
+# This file is NOT committed to the repo
+# Copy from .zshrc.local.example and customize per machine
+# ──────────────────────────────────────────
+
+# ── XStorage volume path (example: this machine) ─
+# Change this on each machine to match the actual volume name or path
+export X_STORAGE="${X_STORAGE:-/Volumes/XStorage}"
+
+# Fallback if XStorage volume not mounted
+if [ ! -d "$X_STORAGE" ]; then
+    export X_STORAGE="$HOME/.local/share/xstorage"
+fi
+
+# ── Machine: macOS arm64, Apple Silicon ──
+# Homebrew prefix for Apple Silicon Mac
+export BREW_PREFIX="/opt/homebrew"
+
+# ── Project paths ────────────────────
+export PROJECTS_DIR="$X_STORAGE/Projects"
+
+# ── Android SDK (macOS) ────────────
+export ANDROID_SDK_ROOT="$X_STORAGE/Android/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export PATH="$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH"
+
+# ── Gradle JVM options ──────────────
+# Directs Android SDK temp to XStorage to avoid system disk full
+export GRADLE_USER_HOME="$X_STORAGE/.gradle"
+export TMPDIR="$X_STORAGE/.tmp"
+export GRADLE_OPTS="-Djava.io.tmpdir=$X_STORAGE/.tmp -Xmx4096m"
+
+# ── API Keys / Secrets (NEVER commit these) ──
+# export FIREBASE_API_KEY="..."
+# export DATABASE_URL="..."
+# export GITHUB_TOKEN="..."
+
+# ── Machine-specific aliases ─────────
+alias ll="ls -lah"
+alias cls="clear"
+
+# ── Additional brew taps (machine-specific) ──
+# brew tap myorg/custom-tools
